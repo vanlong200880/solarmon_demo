@@ -3,16 +3,10 @@ var url = window.location.hostname;
 var serverAPI = '';
 var serverData = '';
 switch (url) {
-    case 'backend.techedge.vn':
-        serverAPI = 'https://apibackend.techedge.vn';
-        serverData = 'https://apibackend.techedge.vn/uploads';
-        break;
-    case 'solarmon.techedge.vn':
-    case 'www.solarmon.techedge.vn':
-    case 'www.devsolarmon.focustech.vn':
-    case 'devsolarmon.focustech.vn':
-        serverAPI = 'https://apibackend.techedge.vn';
-        serverData = 'https://apibackend.techedge.vn/uploads';
+    case 'demo.techedge.vn':
+    case 'www.dmeo.techedge.vn':
+        serverAPI = 'https://apidemo.techedge.vn';
+        serverData = 'https://apidemo.techedge.vn/uploads';
         break;
     default:
         serverAPI = 'http://localhost:3015';

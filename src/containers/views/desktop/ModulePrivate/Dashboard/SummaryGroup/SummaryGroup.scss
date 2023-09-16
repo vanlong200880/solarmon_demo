@@ -1,0 +1,9 @@
+@import "../../../../../../scss/helpers/variables";
+@import "../../../../../../scss/helpers/mixins";
+.data-chart{
+    border: 1px solid #ddd;
+    @include box-shadow(0 0 4px 0 rgba(0, 0, 0, .2));
+    @include border-radius(3px);
+    overflow: hidden;
+    margin-top: 20px;
+}

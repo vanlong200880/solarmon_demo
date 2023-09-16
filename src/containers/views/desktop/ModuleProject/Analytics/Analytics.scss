@@ -1,0 +1,354 @@
+@import "../../../../../scss/helpers/variables";
+@import "../../../../../scss/helpers/mixins";
+.analytics{
+    height: 100%;
+    position: relative;
+
+    .show-12month,
+    .show-3day{
+        .cmsdatepicker{
+            float: left;
+            width: auto;
+        }
+        .line-date{
+            span{
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+    
+    .chart-device-param{
+        position: absolute;
+        top: -1px;
+        border: 1px solid #DDD;
+        width: 280px;
+        height: calc(100% + 2px);
+        z-index: 9;
+        left: 100%;
+        background: #FFF;
+        padding: 10px;
+        overflow: hidden;
+
+        .device-parameter{
+            height: calc(100% - 65px);
+            overflow-y: auto;
+            .item-title{
+                font-weight: bold;
+                margin-top: 15px;
+            }
+        }
+        h2{
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid #DDD;
+            padding: 5px 0;
+            position: relative;
+            span{
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                top: 0;
+                cursor: pointer;
+                @include border-radius(3px);
+                font-size: 14px;
+                &:hover{
+                    background-color: #f3f5f7;
+                }
+                var{
+                    position: relative;
+                    top: 2px;
+                }
+            }
+        }
+        .parameter-footer{
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            left: 0;
+            width: 100%;
+            padding: 5px 0;
+            background-color: #f3f5f7;
+            border-top: 1px solid #DDD;
+            span{
+                cursor: pointer;
+                display: inline-block;
+                padding: 5px 10px;
+                @include border-radius(3px);
+                border: 1px solid #DDD;
+                margin: 0 5px;
+                &.add{
+                    background-color: $default;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+
+    
+    
+    .header-title{
+        height: 40px;
+        .group-header{
+            width: 210px;
+            display: inline-block;
+            position: relative;
+            .reload-chart{
+                width: 34px;
+                height: 34px;
+                line-height: 34px;
+                text-align: center;
+                border: 1px solid #DDD;
+                @include border-radius(3px);
+                cursor: pointer;
+                position: absolute;
+                left: 220px;
+                top: 0;
+                span{
+                    position: relative;
+                    top: 1px;
+                }
+            }
+        }
+    }
+    
+
+    .chart-view-title{
+        background-color: $default;
+        h2{
+            text-transform: uppercase;
+            color: #FFF;
+            font-size: 14px;
+            padding: 7px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        p{
+            color: #FFF;
+            text-align: right;
+            padding: 7px 5px;
+        }
+    }
+    .main-charting-view{
+        padding: 15px 0;
+    }
+    .chart-view{
+        height: calc(100% - 50px);
+        position: relative;
+        margin-top: 10px;
+        .list-device-diag{
+            margin-top: 10px;
+            ul{
+                li{
+                    position: relative;
+                    padding-left: 30px;
+                    margin-bottom: 15px;
+                    span{
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        .list-parameter{
+            width: 20%;
+            height: 100%;
+            border: 1px solid #DDD;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            .title{
+                height: 100%;
+                position: absolute;
+                overflow: hidden;
+                top: 0;
+                left: 0;
+                width: 100%;
+                h2{
+                    font-size: 16px;
+                    font-weight: bold;
+                    padding: 5px 0;
+                    border-bottom: 1px solid #DDD;
+                    position: relative;
+                    span{
+                        position: absolute;
+                        right: 0;
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 30px;
+                        top: 0;
+                        cursor: pointer;
+                        @include border-radius(3px);
+                        &:hover{
+                            background-color: #f3f5f7;
+                        }
+                        var{
+                            position: relative;
+                            top: 2px;
+                        }
+                    }
+                }
+            }
+            .list-device{
+                margin-top: 10px;
+                overflow-y: auto;
+                height: calc(100% - 35px);
+                padding: 0 15px 15px 15px;
+                ul{
+                    margin-left: -10px;
+                }
+            }
+        }
+        .main-chart-view{
+            position: absolute;
+            right: 0;
+            width: calc(80% - 20px);
+            height: 100%;
+            .box-chart{
+                width: 100%;
+                height: 100%;
+                border: 1px solid #DDD;
+                padding: 15px 15px 0 15px;
+                .chart-content{
+                    height: calc(100% - 35px);
+                    padding-top: 15px;
+                    overflow: hidden;
+                }
+                .chart-filter{
+                    .time-filter{
+                        color: $default;
+                        height: 34px;
+                        float: right;
+                        margin-right: 10px;
+                        .pad-line{
+                            padding: 0 15px;
+                        }
+                        span{
+                            &.icon{
+                                padding: 5px;
+                                position: relative;
+                                top: 2px;
+                                cursor: pointer;
+                                &.disabled{
+                                    cursor: not-allowed;
+                                    color: #DDD;
+                                }
+                            }
+                        }
+                        label{
+                            display: inline-block;
+                            padding: 0 5px;
+                            font-size: 0.9rem;
+                        }
+                    }
+    
+    
+                    .filter-raw{
+                        display: inline-block;
+                        .main-raw{
+                            display: inline-block;
+                            border: 1px solid #DDD;
+                            margin-right: 10px;
+                            @include border-radius(3px);
+                            span{
+                                display: inline-block;
+                                padding: 5px 15px;
+                                border-right: 1px solid #DDD;
+                                cursor: pointer;
+                                border-bottom: 2px solid transparent;
+                                &:last-of-type{
+                                    border-right: none;
+                                }
+                                &.active{
+                                    border-bottom-color:$default;
+                                    color: $default;
+                                }
+                                &.disabled{
+                                    cursor:not-allowed;
+                                    color: #c5c5c5;
+                                }
+                            }
+                        }
+                        
+                    }
+                    .filter{
+                        text-align: right;
+                        position: relative;
+                        float: right;
+                        .view{
+                            display: inline-block;
+                            border: 1px solid rgba(0,0,0,.15);
+                            padding: 5px 15px;
+                            @include border-radius(3px);
+                            width: 150px;
+                            text-align: left;
+                            span{
+                                position: relative;
+                                top: 2px;
+                                padding-left: 5px;
+                                float: right;
+                            }
+                        }
+                        .filter-dropdown{
+                            position: absolute;
+                            right: 0;
+                            border: 1px solid rgba(0,0,0,.15);
+                            @include border-radius(3px);
+                            width: 140px;
+                            display: none;
+                            z-index: 9;
+                            background-color: #FFF;
+                            a{
+                                display: inline-block;
+                                width: 100%;
+                                padding: 5px 15px;
+                                text-align: left;
+                                &:hover{
+                                    background-color: #E1F0FA;
+                                }
+                                &.active{
+                                    background-color: #E1F0FA;
+                                }
+                            }
+                        }
+                        &.on{
+                            .filter-dropdown{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .box-item{
+            border: 1px solid #DDD;
+            margin-bottom: 15px;
+            .title{
+                border-bottom: 1px solid #DDD;
+                padding: 5px 15px 5px 15px;
+                background-color: #f3f5f7;
+                h2{
+                    font-size: 14px;
+                    font-weight: bold;
+                    height: 34px;
+                    line-height: 34px;
+                }
+            }
+            .box-item-chart{
+                padding: 15px;
+            }
+        }
+    }
+}

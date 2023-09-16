@@ -1,0 +1,8 @@
+@import '../../../../scss/helpers/variables';
+@import '../../../../scss/helpers/mixins';
+.error-404{
+    padding: 30px;
+    p{
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,254 @@
+@import "../../../scss/helpers/variables";
+@import "../../../scss/helpers/mixins";
+.header{
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(60,64,67, .2), 0 1px 2px 1px rgba(60, 64, 67, .15);
+    .logo{
+        height: 60px;
+        padding: 5px 0;
+        width: 260px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 5px;
+        img{
+            max-height: 100%;
+        }
+        span{
+            font-size: 20px;
+            position: relative;
+            top: 5px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+    }
+    .sidebar-top{
+        position: relative;
+        margin-top: 15px;
+        margin-left: 260px;
+        ul{
+            li{
+                display: inline-block;
+                a{
+                    padding: 7px 10px;
+                    margin-right: 10px;
+                    display: inline-block;
+                    @include border-radius(3px);
+                    &:hover,
+                    &.active{
+                        background-color: $default;
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+    .menu-top{
+        text-align: right;
+        ul{
+            display: inline-block;
+            li{
+                height: 60px;
+                padding: 10px 0;
+                margin-left: 20px;
+                float: left;
+                position: relative;
+                &.username{
+                    margin-left: 10px;
+                }
+                a{
+                    display: inline-block;
+                    line-height: 40px;
+                    position: relative;
+                    .notification{
+                        background: red;
+                        color: #FFF;
+                        font-size: 10px;
+                        display: inline-block;
+                        position: absolute;
+                        @include border-radius(50%);
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+                        line-height: 20px;
+                        top: -7px;
+                        font-style: normal;
+                    }
+                    &.round{
+                        background: #f2f3f5;
+                        @include border-radius(50%);
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: #606060;
+                        font-size: 20px;
+                    }
+                    span{
+                        position: relative;
+                        top: 2px;
+                    }
+                    img{
+                        height: 20px;
+                        padding-right: 5px;
+                    }
+                    &.avatar{
+                        span{
+                            @include border-radius(50%);
+                            width: 40px;
+                            height: 40px;
+                            overflow: hidden;
+                            display: inline-block;
+                            top: 0;
+                            background-color: #f2f3f5;
+                            text-align: center;
+                            line-height: 40px;
+                            var{
+                                position: relative;
+                                color: #606060;
+                                font-size: 20px;
+                                top: 2px;
+                            }
+                            img{
+                                width: 40px;
+                                height: 40px;
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+                ul{
+                    position: absolute;
+                    top: 80px;
+                    right: 0;
+                    background-color: #FFF;
+                    width: 280px;
+                    border: 1px solid #DDD;
+                    visibility: hidden;
+                    opacity: 0;
+                    &.on{
+                        visibility: visible;
+                        opacity: 1;
+                        top: 60px;
+                    }
+                    &.language{
+                        width: 140px;
+                    }
+                    li{
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        height: auto;
+                        position: relative;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            top: -7px;
+                            right: 10px;
+                            border-bottom: 7px solid #DDD;
+                            border-left: 7px solid transparent;
+                            border-right: 7px solid transparent;
+                        }
+
+                        .item{
+                            border-bottom: 1px solid #DDD;
+                            position: relative;
+                            padding: 16px;
+                            display: -ms-flexbox;
+                            display: -webkit-flex;
+                            display: flex;
+                            -ms-flex-direction: row;
+                            -webkit-flex-direction: row;
+                            flex-direction: row;
+                            
+                            a{
+                                line-height:inherit;
+                            }
+
+                            .main-item{
+                                position: relative;
+                                overflow: hidden;
+
+                                .header-avatar{
+                                    height: 40px;
+                                    width: 40px;
+                                    margin-right: 16px;
+                                    @include border-radius(50%);
+                                    background-color: transparent;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    line-height: 40px;
+                                    text-align: center;
+                                    border: 1px solid #f3f6f7;
+                                }
+                                .channel-container{
+                                    display: -ms-flexbox;
+                                    display: -webkit-flex;
+                                    display: flex;
+                                    -ms-flex-direction: column;
+                                    -webkit-flex-direction: column;
+                                    flex-direction: column;
+                                    -ms-flex-pack: center;
+                                    -webkit-justify-content: center;
+                                    justify-content: center;
+                                    overflow: hidden;
+                                    padding-left: 55px;
+                                    p{
+                                        text-align: left;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+    
+                                        a{
+                                            font-size: 14px;
+                                            color: $default;
+                                            text-align: left;
+                                            @include border-radius(0);
+                                            background: transparent;
+                                            width: 100%;
+                                            height: auto;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        .item-group{
+                            width: 100%;
+                            padding: 5px 0;
+                            a{
+                                height: 40px;
+                                padding: 0 15px;
+                                position: relative;
+                                width: 100%;
+                                display: inline-block;
+                                color: #222;
+                                text-align: left;
+                                line-height: 40px;
+                                &.active-lang{
+                                    background: #f0f3f5;
+                                }
+                                span{
+                                    font-size: 18px;
+                                    top: 3px;
+                                    padding-right: 10px;
+                                }
+                                &:hover{
+                                    background: #f0f3f5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,221 @@
+/**
+ * 验证规则库
+ * @author ydr.me
+ * @create 2015-07-05 22:40
+ */
+
+var typeis = require('./typeis.js');
+var number = require('./number.js');
+var string = require('./string.js');
+var lang = require('./_validation-lang.js');
+
+var REG_NUMBERIC = /^-?[\d.]+$/;
+
+module.exports = function (Validation) {
+    Validation.addRule('trim', function (val, done, param0) {
+        if (param0) {
+            this.data[this.path] = typeis(val) === 'string' || typeis(val) === 'number' ?
+                String(val).trim() : '';
+        }
+
+        done();
+    });
+
+    Validation.addRule('type', function (val, done, param0) {
+        var the = this;
+        var path = the.path;
+        var isRequired = the.getRuleParams(path, 'required');
+        isRequired = isRequired ? isRequired[0] : true;
+        var alias = the.getAlias(path) || path;
+
+        if (!isRequired && !val) {
+            return done(null);
+        }
+
+        switch (param0) {
+            case 'array':
+                return done(typeis(val) === 'array' ? null : string.assign(lang.get('type', 'array'), alias, param0));
+
+            case 'number':
+                return done(/^-?\d+(\.?\d{0,3}$)|^\.?\d{0,3}$|^-$/g.test(val) ? null : string.assign(lang.get('type', 'number'), alias, param0));
+            case 'decimal':
+                return done(/^\d*\.?\d*$/.test(val) ? null : string.assign(lang.get('type', 'number'), alias, param0));
+            case 'number_positive':
+                return done(/^\d+(\.\d{1,3})?$/.test(val) ? null : string.assign(lang.get('type', 'number'), alias, param0));
+
+            case 'integer':
+                if (typeof val === 'number') {
+                    val = val.toString();
+                }
+                val = val.replace(/^-/, '');
+                return done(/^(0|[1-9]\d*)$/.test(val) ? null : string.assign(lang.get('type', 'integer'), alias, param0));
+
+            case 'mobile':
+                return done(/^1\d{10}$/.test(val) ? null : string.assign(lang.get('type', 'mobile'), alias, param0));
+
+            case 'email':
+                return done(typeis.email(val) ? null : string.assign(lang.get('type', 'email'), alias, param0));
+            case 'url':
+                return done(typeis.url(val) ? null : string.assign(lang.get('type', 'url'), alias, param0));
+            case 'dateDMY':
+                return done(typeis.date(val) ? null : string.assign(lang.get('type', 'date'), alias, param0));
+            case 'dateYMD':
+                return done(typeis.date(val, true) ? null : string.assign(lang.get('type', 'date'), alias, param0));
+            case 'dateDMYHm':
+                return done(typeis.dateTimeToMinute(val) ? null : string.assign(lang.get('type', 'date'), alias, param0));
+            case 'dateYMDHm':
+                return done(typeis.dateTimeToMinute(val, true) ? null : string.assign(lang.get('type', 'date'), alias, param0));
+            case 'numreicAllowZero':
+                if (typeof val === 'number') {
+                    val = val.toString();
+                }
+                return done(/^[0-9]*$/.test(val) ? null : string.assign(lang.get('type', 'numreicAllowZero'), alias, param0));
+            default:
+                break;    
+        }
+    });
+
+
+    Validation.addRule('required', function (val, done, param0) {
+        if (!param0) {
+            return done();
+        }
+        var convertVal = (typeof val === 'number')? val.toString() : val;
+        var isMultiple = _isMultiple(convertVal);
+        var boolean = typeis(convertVal) === 'file' ? true :
+            (isMultiple ? convertVal : (convertVal || '')).length > 0;
+        //done(boolean ? null : '${path}不能为空');
+        done(boolean ? null : lang.get('required'));
+    });
+
+
+    var _createLength = function (type) {
+        var typeMap = {
+            0: 'minLength',
+            1: 'maxLength'
+        };
+
+        return function (val, done, param0) {
+            param0 = number.parseInt(param0);
+            var convertVal = (typeof val === 'number') ? val.toString() : val;
+            var requiredParams = this.getRuleParams(this.path, 'required');
+            var required = requiredParams ? requiredParams[0] : true;
+            var isMultiple = _isMultiple(convertVal);
+            var length = (isMultiple ? convertVal : (convertVal || '')).length;
+            var boolean = type === 0 ? length >= param0 : length <= param0;
+
+            // 未填 && 可选
+            if (!length && !required) {
+                return done();
+            }
+
+            if (isMultiple) {
+                done(boolean ? null : lang.get(typeMap[type], 'select'));
+            } else {
+                done(boolean ? null : lang.get(typeMap[type], 'input'));
+            }
+        };
+    };
+
+    Validation.addRule('minLength', _createLength(0));
+    Validation.addRule('maxLength', _createLength(1));
+
+
+    Validation.addRule('equal', function (val, done, param0) {
+        val = val || '';
+        done(val === this.getData(param0) ? null : '${1}必须与' + this.getAlias(param0) + '相同');
+    });
+
+
+    var _createNumber = function (type) {
+        return function (val, done, param0) {
+            val = val || '';
+
+            var isRequired = this.getRuleParams(this.path, 'required');
+            isRequired = isRequired ? isRequired[0] : true;
+            // 非必填并且是空值
+            if (!isRequired && (val === "" || val === null || typeof val === "undefined")) {
+                return done(null);
+            }
+
+            if (!REG_NUMBERIC.test(val)) {
+                return done('${1}必须为数值格式');
+            }
+
+            val = number.parseFloat(val);
+            param0 = number.parseFloat(param0);
+
+            var boolean = type === 0 ? val >= param0 : val <= param0;
+
+            done(boolean ? null : lang.get(type ? 'max' : 'min'));
+        };
+    };
+
+    Validation.addRule('min', _createNumber(0));
+    Validation.addRule('max', _createNumber(1));
+    Validation.addRule('step', function (val, done, param0) {
+        val = val || '';
+
+        var isRequired = this.getRuleParams(this.path, 'required');
+
+        // 非必填并且是空值
+        if (!isRequired && !val) {
+            return done(null);
+        }
+
+        if (!REG_NUMBERIC.test(val)) {
+            return done('${1}必须为数值格式');
+        }
+
+        var min = this.getRuleParams(this.path, 'min')[0];
+
+        val = number.parseInt(val, 0);
+        param0 = number.parseInt(param0, 0);
+
+        if (!param0) {
+            return done(null);
+        }
+
+        done((val - min) % param0 ? '${1}递增步进值必须是' + param0 + '，最小值为' + min : null);
+    });
+
+    var _createSelect = function (type) {
+        return function (val, done, param0) {
+            if (!param0) {
+                return done();
+            }
+
+            if (typeis(val) !== 'array') {
+                return done('${1}必须为数组格式');
+            }
+
+            var length = val.length;
+
+            // most
+            if (type) {
+                done(length > param0 ? lang.get('most') : null);
+            }
+            // least
+            else {
+                done(length < param0 ? lang.get('least') : null);
+            }
+        };
+    };
+
+    Validation.addRule('least', _createSelect(0));
+    Validation.addRule('most', _createSelect(1));
+};
+
+
+//============================================================
+//============================================================
+//============================================================
+
+/**
+ * 判断是否为多值类型
+ * @param obj
+ * @returns {boolean}
+ */
+function _isMultiple(obj) {
+    return typeis.array(obj) || typeis(obj) === 'filelist';
+}

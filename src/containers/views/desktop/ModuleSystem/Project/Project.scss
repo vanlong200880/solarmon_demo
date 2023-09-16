@@ -1,0 +1,96 @@
+@import '../../../../../scss/helpers/variables';
+@import '../../../../../scss/helpers/mixins';
+.project-system{
+    .screen-full{
+        max-width: 97%;
+        .modal-content{
+            min-height: 100%;
+            .btn-margin-top{
+                margin-top: 20px;
+            }
+            .box-info {
+                .box-info-content{
+                    padding: 15px;
+                }
+            }
+            .paging{
+                padding: 15px 0 0 0;
+            }
+        }
+    }
+}
+.save-config{
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    top: 0;
+    height: 28px;
+    line-height: 26px;
+    top: 2px;
+}
+
+.modal-project-config{
+    p{
+        &.validate-message{
+            display: none;
+        }
+    }
+    fieldset{
+        border: 1px solid #DDD;
+        padding: 15px;
+        @include border-radius(3px);
+        margin-bottom: 15px;
+        legend{
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 1px solid #DDD;
+        }
+    }
+}
+.add-config{
+    background-color: $default;
+    margin-top: 2px;
+    color: #fff;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 4px !important;
+    @include border-radius(3px);
+    border: 1px solid #f0f3f5;
+    width: 34px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    span{
+        position: relative;
+        top: 2px;
+    }
+
+}
+.modal-multi{
+    .main-multi-modal{
+        .modal-list-device{
+            display: none !important;
+        }
+    }
+}
+.add-device-share{
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    background: $default;
+    color: #FFF;
+    font-weight: normal;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover{
+        background: $hover;
+    }
+}
+.project-user-manage{
+    .data-view{
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,86 @@
+@import "../../scss/helpers/variables";
+@import "../../scss/helpers/mixins";
+.react-datepicker__header {
+    &.react-datepicker__header--custom{
+        select{
+            margin: 0 10px;
+            border: 1px solid #ddd;
+            @include border-radius(3px);
+            padding: 0 5px;
+            background: #f0f3f5;
+            &:hover{
+                background-color: #f3f5f7;
+                border-color:$default;
+            }
+        }
+        button{
+            width: 24px;
+            height: 24px;
+            @include border-radius(3px);
+            border: 1px solid #ddd;
+            background: #f0f3f5;
+            text-align: center;
+            line-height: 24px;
+            &:hover{
+                background-color: #f3f5f7;
+                border-color:$default;
+            }
+            var{
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+}
+.input-group{
+    &.cmsdatepicker{
+        .react-datepicker-popper{
+            z-index: 5;
+        }
+        .form-control{
+            height: 34px;
+            background-color: #fff;
+            padding: 0;
+        }
+        .react-datepicker-wrapper{
+            width: 100%;
+            input[type='text']{
+                border: none;
+                background: #fff;
+                height: 32px;
+                width: 100%;
+                padding: 0 10px;
+                @include border-radius(3px);
+                font-size: 14px;
+                color: #222;
+            }
+        }
+        .react-datepicker__triangle{
+            left: 50px !important;
+        }
+        .input-group-append{
+            .datepickerbutton{
+                padding: 0;
+                width: 34px;
+                height: 34px;
+                border-color: #ddd;
+                @include border-bottom-left-radius(0);
+                @include border-top-left-radius(0);
+                @include box-shadow(none);
+                outline: none;
+                color: #606060;
+                z-index: 1;
+                span{
+                    position: relative;
+                    top: 2px;
+                }
+                &:hover,
+                &:focus,
+                &:active{
+                    outline: none;
+                    background-color: #f0f3f5;
+                }
+            }
+        }
+    }
+}

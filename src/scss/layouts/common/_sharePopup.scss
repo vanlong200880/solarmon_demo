@@ -1,0 +1,90 @@
+
+#share-popup{
+	.modal-dialog{
+		max-width: 420px;
+	}
+	.modal-header{
+		background: #f2f5fa;
+		padding: 10px;
+		h5{
+			font-size: 16px;
+		}
+		.bootbox-close-button{
+			background: #ddd;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			@include border-radius(50%);
+			opacity: 1;
+			color: #888585;
+			text-shadow: none;
+			z-index: 9;
+			font-weight: normal;
+			&:hover{
+				color: $default;
+			}
+		}
+	}
+	.modal-content{
+		background: #f9f9f9;
+		border: none;
+		.share-content{
+			ul{
+				margin-top: 10px;
+				li{
+					border-top: 1px solid #DDD;
+					a{
+						display: inline-block;
+						width: 100%;
+						padding: 15px 0;
+						&:hover{
+							background: #f3f5f7;
+						}
+						span{
+							width: 30px;
+							height: 30px;
+							display: inline-block;
+							@include border-radius(50%);
+							vertical-align: middle;
+							margin-right: 10px;
+							text-align: center;
+							line-height: 30px;
+							color: #FFF;
+							var{
+								position: relative;
+								top: 1px;
+							}
+							&.facebook{
+								background: #3b5998;
+							}
+							&.google{
+								background: #df4a32;
+							}
+							&.twitter{
+								background: #1da1f2;
+							}
+							&.instagram{
+								background:#6e3ab2;
+							}
+							&.email{
+								background: #5ec4c8;
+							}
+							&.messager{
+								background: #04a0ff;
+							}
+							&.copy{
+								background:#ababab;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

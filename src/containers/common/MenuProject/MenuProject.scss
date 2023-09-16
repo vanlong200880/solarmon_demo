@@ -1,0 +1,25 @@
+@import "../../../scss/helpers/variables";
+@import "../../../scss/helpers/mixins";
+
+.sidebar-top{
+    position: fixed;
+    margin-top: 15px;
+    top: 0;
+    z-index: 99;
+    ul{
+        li{
+            display: inline-block;
+            a{
+                padding: 7px 10px;
+                margin-right: 10px;
+                display: inline-block;
+                @include border-radius(3px);
+                &:hover,
+                &.active{
+                    background-color: $default;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}

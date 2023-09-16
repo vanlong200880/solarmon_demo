@@ -1,0 +1,64 @@
+@import "../../../../scss/helpers/variables";
+@import "../../../../scss/helpers/mixins";
+.activities{
+    .d-inline-block{
+        img{
+            margin-right: 5px
+        }
+    }
+    .form-search{
+        h2{
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+    .opened{
+        @include border-radius(3px);
+        background: #ef4646;
+        color: #fff;
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+    .closed{
+        @include border-radius(3px);
+        background: #66bc51;
+        color: #fff;
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+    .modal-add{
+        .alert-information{
+            p{
+                span{
+                    display: inline-block;
+                    padding: 3px 15px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .reminder{
+            margin-left: -10px;
+        }
+    }
+    .custom-tooltip{
+        max-width: 400px;
+        .error-content{
+            h2{
+                color: #fff;
+                border-bottom: 2px solid #fff;
+                text-transform: uppercase;
+                font-size: 14px;
+                padding-bottom: 5px;
+                padding-top: 5px;
+                font-weight: bold;
+            }
+            .content{
+                p{
+                    padding: 5px 0 !important;
+                    line-height: 20px;
+                }
+            }
+        }
+        
+    }
+}

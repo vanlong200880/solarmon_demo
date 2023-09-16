@@ -1,0 +1,168 @@
+@import '../../helpers/variables';
+@import '../../helpers/mixins';
+
+#register-popup,
+#login-popup{
+	.modal-header{
+		padding: 0;
+		margin: 0;
+		border-bottom: none;
+		.bootbox-close-button{
+			background: #ddd;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: -15px;
+			right: -15px;
+			@include border-radius(50%);
+			opacity: 1;
+			color: #888585;
+			text-shadow: none;
+			z-index: 9;
+			font-weight: normal;
+			&:hover{
+				color: $default;
+			}
+		}
+	}
+	.modal-content{
+		background: #f9f9f9;
+		border: none;
+	}
+	
+	.form-popup-content{
+		padding: 15px;
+		height: 100%;
+		background: #fff;
+		@include border-radius(3px);
+		.register-done{
+			h2{
+				font-weight: bold;
+				padding: 10px 0;
+				font-size: 18px;
+			}
+			p{
+				line-height: 24px;
+				margin-bottom: 10px;
+				text-align: justify;
+				a{
+					color: $default;
+				}
+			}
+			.form-submit{
+				margin-top: 15px;
+				.btn-danger{
+					width: 100%;
+				}
+			}
+		}
+		.main-popup{
+			.tabs-login{
+				border-bottom: 1px solid #DDD;
+				margin-bottom: 30px;
+				a{
+					display: inline-block;
+					padding: 5px 15px;
+					font-size: 16px;
+					position: relative;
+					bottom: -2px;
+					&.active{
+						font-size: 16px;
+						border-bottom: 3px solid $default;
+						color: $default;
+					}
+				}
+			}
+			.content-form{
+				p{
+					a{
+						color: $default;
+					}
+				}
+			}
+			.form-submit{
+				.submit-account{
+					.btn{
+						width: 100%;
+						@include border-radius(2px);
+						text-shadow: none;
+						background: $default;
+						color: #FFF;
+						outline: none;
+						border: none;
+						&:hover{
+							background: $hover;
+						}
+						&:focus{
+							outline: none;
+							@include box-shadow(none);
+						}
+					}
+				}
+			}
+			.login-social{
+				h2{
+					border-bottom: 1px solid #DDD;
+					position: relative;
+					text-align: center;
+					margin-bottom: 10px;
+					span{
+						font-size: 14px;
+						height: 22px;
+						position: relative;
+						background: #FFF;
+						bottom: -10px;
+						padding: 0 5px;
+					}
+				}
+				button{
+					display: inline-block;
+					width: 100%;
+					height: 40px;
+					line-height: 40px;
+					text-align: center;
+					position: relative;
+					color: #FFF;
+					@include border-radius(3px);
+					margin-top: 15px;
+					border: none;
+					padding-left: 40px;
+					i{
+						position: absolute;
+						width: 40px;
+						height: 40px;
+						top: 0;
+						left: 0;
+						border-right: 1px solid #DDD;
+						line-height: 44px;
+						font-size: 18px;
+	
+					}
+					&.facebook{
+						background: #3b5998;
+						&:hover{
+							background: #4264ab;
+						}
+					}
+					&.google{
+						background: #df4a32;
+						&:hover{
+							background: #ef5239;
+						}
+					}
+					// &.zalo{
+					// 	background: #0f8edd;
+					// 	&:hover{
+					// 		background: #1699ec;
+					// 	}
+					// }
+					
+				}
+			}
+		}
+	}
+}

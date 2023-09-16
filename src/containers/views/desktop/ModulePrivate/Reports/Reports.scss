@@ -1,0 +1,302 @@
+@import "../../../../../scss/helpers/variables";
+@import "../../../../../scss/helpers/mixins";
+@media all {
+    .page-break {
+      display: none;
+    }
+  }
+  
+  @media print {
+    html, body {
+      height: initial !important;
+      overflow: initial !important;
+      -webkit-print-color-adjust: exact;
+    }
+    .main-break-page{
+        // page-break-after: always;
+        page-break-before: always;
+        // page-break-inside: avoid;
+    }
+    .highcharts-container{
+        margin: 0 auto;
+        width: 100%;
+    }
+    .export-year{
+        .box-item-chart{
+            height: auto !important;
+        }
+    }
+  }
+  
+  @media print {
+    .page-break {
+    //   margin-top: 1rem;
+      display: block;
+      page-break-before: always;
+    }
+  }
+  
+  @page {
+    size: portrait;
+    margin: 10mm;
+  }
+
+.main-charting-view{
+    margin-top: 15px;
+}
+.export-year{
+    .box-item-chart{
+        height: 340px;
+        position: relative;
+        .item-alarm-sum{
+            padding: 15px 5px;
+            width: 100%;
+            p{
+                font-size: 16px;
+                color: $orange;
+                font-weight: bold;
+            }
+        }
+
+    }
+}
+
+
+.report-header-info{
+    padding: 30px 0;
+    p{
+        &.text{
+            height: 34px;
+            line-height: 34px;
+            font-weight: bold;
+            font-size: 13px;
+            width: 200px;
+        }
+        &.value{
+            width: 110px;
+            border: 1px solid #DDD;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            font-size: 13px;
+            &.double{
+                width: 220px;
+            }
+            span{
+                display: inline-block;
+                width: 50%;
+                text-align: center;
+                height: 34px;
+                line-height: 34px;
+            }
+        }
+    }
+    
+    table{
+        margin: 0;
+        tr{
+            td{
+                height: 34px;
+                padding: 0;
+                border: none;
+            }
+        }
+    }
+}
+.section-table{
+    .title{
+        text-align: center;
+        padding: 7px 0;
+        background-color: $default;
+        color: #FFF;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    table{
+        tr{
+            th,
+            td{
+                padding: 0;
+                p{
+                    padding: 3px 0.5rem;
+                    min-height: 30px;
+                    &.bg-first{
+                        background-color: #78c1f5;
+                    }
+                    &.bg-two{
+                        background-color: #e2a76c;
+                    }
+                    &.error{
+                        color: rgb(184, 0, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section-chart{
+    margin-top: 30px;
+    .report-chart-section{
+        border: 1px solid #DDD;
+        padding: 10px;
+        margin-bottom: 30px;
+        .title{
+            text-align: center;
+            padding: 5px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.report-filter{
+    ul{
+        li{
+            display: inline-block;
+            height: 34px;
+            line-height: 34px;
+            margin-left: 10px;
+            padding: 0 7px;
+            @include border-radius(3px);
+            border: 1px solid #DDD;
+            cursor: pointer;
+            &:hover{
+                background-color: #f3f5f7;
+            }
+        }
+    }
+    .to{
+        height: 34px;
+        line-height: 34px;
+    }
+}
+
+.report-header{
+    padding: 15px 0;
+    border-bottom: 2px solid #444;
+    table{
+        margin-bottom: 0;
+        tr{
+            td{
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+    h1{
+        font-size: 15px;
+        text-align: right;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    h2{
+        font-size: 14px;
+        text-align: right;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    p{
+        font-size: 12px;
+        text-align: right;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+}
+
+.report-month-content{
+    .title{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .month-table{
+        padding: 15px 0;
+    }
+}
+
+
+.report-alarm-open{
+    border: 1px solid #DDD;
+    margin-bottom: 15px;
+    .title{
+        border-bottom: 1px solid #DDD;
+        padding: 5px 15px 5px 15px;
+        background-color: #f3f5f7;
+        h2{
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+    .box-item-chart{
+        position: relative;
+        height: auto;
+        ul{
+            li{
+                border-bottom: 1px solid #DDD;
+                &:last-child{
+                    border-bottom: none;
+                }
+                .item-alarm-sum{
+                    padding: 15px 5px;
+                    p{
+                        font-size: 16px;
+                        color: $orange;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .main-alarm{
+            .main-header{
+                .header-row{
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .header-col{
+                        flex-grow: 1;
+                        border-right: 1px solid #ddd;
+                        border-bottom: 1px solid #ddd;
+                        height: 40px;
+                        line-height: 40px;
+                        padding: 0 5px 0 5px;
+                        position: relative;
+                        &:last-child{
+                            border-right: none;
+                        }
+                        p{
+                            display: inline-block;
+                            width: 100%;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            .main-body{
+                position: relative;
+                .body{
+                    .body-row{
+                        display: flex;
+                        flex-wrap: wrap;
+                        .body-col{
+                            flex-grow: 1;
+                            border-right: 1px solid #ddd;
+                            border-bottom: 1px solid #ddd;
+                            &:last-child{
+                                border-right: none;
+                            }
+                            p{
+                                padding: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

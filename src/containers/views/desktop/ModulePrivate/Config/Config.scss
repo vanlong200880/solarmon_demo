@@ -1,0 +1,110 @@
+@import "../../../../../scss/helpers/variables";
+@import "../../../../../scss/helpers/mixins";
+.config{
+    height: 100%;
+    position: relative;
+
+    .header-title{
+        ul{
+            li{
+                display: inline-block;
+                padding: 0 15px;
+                height: 30px;
+                line-height: 30px;
+                margin-right: 10px;
+                cursor: pointer;
+                background-color: #f3f5f7;
+                @include border-radius(3px);
+                &.active,
+                &:hover{
+                    background-color: $default;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+
+    .list-device{
+        position: absolute;
+        width: 300px;
+        height: 100%;
+        border: 1px solid #DDD;
+        left: 0;
+        top: 0;
+        @include border-radius(3px);
+        overflow: hidden;
+        h2{
+            font-weight: bold;
+            font-size: 14px;
+            border-bottom: 1px solid #DDD;
+            padding: 0 10px;
+            background-color: #f3f5f7;
+            height: 30px;
+            line-height: 30px;
+        }
+        .content-list-device{
+            height: calc(100% - 30px);
+            overflow-x: auto;
+        }
+    }
+
+    .main-config{
+        position: absolute;
+        width: calc(100% - 320px);
+        height: 100%;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+        .main-layout{
+            border: 1px solid #DDD;
+            @include border-radius(3px);
+            height: calc(100% - 50px);
+            position: absolute;
+            width: 100%;
+            top: 50px;
+            left: 0;
+        }
+        .setting{
+            height: 100%;
+            position: relative;
+            .title{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 30px;
+                h2{
+                    font-weight: bold;
+                    font-size: 14px;
+                    border-bottom: 1px solid #DDD;
+                    padding: 0 10px;
+                    background-color: #f3f5f7;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+            .main-setting{
+                padding: 15px;
+                overflow-x: auto;
+                position: absolute;
+                height: calc(100% - 30px);
+                top: 30px;
+                left: 0;
+                width: 100%;
+                h3{
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    margin-top: 15px;
+                    img{
+                        display: inline-block;
+                        height: 16px;
+                        padding-right: 3px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}

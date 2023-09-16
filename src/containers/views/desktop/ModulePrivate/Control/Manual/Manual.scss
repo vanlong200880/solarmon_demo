@@ -1,0 +1,37 @@
+@import "../../../../../../scss/helpers/variables";
+@import "../../../../../../scss/helpers/mixins";
+.main-manual{
+    margin-top: 30px;
+    fieldset{
+        border: 1px solid #DDD;
+        padding: 20px;
+        position: relative;
+        legend{
+            font-size: 14px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            span{
+                position: absolute;
+                background: #FFF;
+                top: -10px;
+                left: 10px;
+                padding: 0 5px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.main-device-limit{
+    margin-top: 15px;
+    ul{
+        li{
+            width: 20%;
+        }
+    }
+}
+.on{
+    .cal{
+        display: none;
+    }
+}

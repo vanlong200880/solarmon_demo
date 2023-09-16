@@ -1,0 +1,9 @@
+@import "../../../../../../scss/helpers/variables";
+@import "../../../../../../scss/helpers/mixins";
+.charts{
+    .chart-diagnostics{
+        .main-chart-view{
+            width: 100%;
+        }
+    }
+}

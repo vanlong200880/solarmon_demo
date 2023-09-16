@@ -1,0 +1,80 @@
+.upgrade{
+	.payment-u-info{
+		margin-bottom: 15px;
+	}
+	.note-package{
+		margin-bottom: 15px;
+	}
+	.summary{
+		margin-bottom: 15px;
+		h2{
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: bold;
+			margin-top: 10px;
+			span{
+				color: $default;
+			}
+		}
+	}
+	.p-summary{
+		text-align: center;
+		h2{
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+			strong{
+				color: $default;
+			}
+		}
+	}
+	fieldset{
+		border: 1px solid #DDD;
+		padding: 0 10px 10px 10px;
+		@include border-radius(4px);
+		legend{
+			width: auto;
+			display: inline-block;
+			margin-bottom: 0;
+			background: #FFF;
+			span{
+				font-size: 14px;
+				font-weight: bold;
+				position: relative;
+				top: -2px;
+				padding: 5px;
+
+			}
+		}
+		.cash{
+			ul{
+				li{
+					.item{
+						h3{
+							font-size: 14px;
+							margin-bottom: 10px;
+						}
+						p{
+							font-size: 18px;
+							color: $default;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.result-upgrade{
+	width: 70%;
+	margin: 0 auto;
+	.title{
+		text-align: center;
+		p{
+			font-size: 44px;
+			color: $default;
+		}
+		h1{
+			padding-top: 15px;
+		}
+	}
+}

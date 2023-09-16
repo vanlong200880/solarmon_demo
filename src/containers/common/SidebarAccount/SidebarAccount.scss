@@ -1,0 +1,64 @@
+@import "../../../scss/helpers/variables";
+@import "../../../scss/helpers/mixins";
+
+.sidebar-profile{
+    border: 1px solid #f0f3f5;
+    @include border-radius(4px);
+    .title{
+        border-bottom: 1px solid #f0f3f5;
+        position: relative;
+        padding: 10px 10px 10px 60px;
+        h2{
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        p{
+            color: $default;
+        }
+        .avatar{
+            height: 40px;
+            width: 40px;
+            @include border-radius(50%);
+            background-color: transparent;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            overflow: hidden;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #f3f5f7;
+        }
+    }
+    .content{
+        padding: 10px;
+        ul{
+            li{
+                a{
+                    height: 40px;
+                    padding: 0 15px;
+                    position: relative;
+                    width: 100%;
+                    display: inline-block;
+                    color: #222;
+                    text-align: left;
+                    line-height: 40px;
+                    @include border-radius(4px);
+                    &.active{
+                        background-color: #f0f3f5;
+                        color: $default;
+                    }
+                    &:hover{
+                        color: $default;
+                    }
+                    var{
+                        font-size: 18px;
+                        top: 3px;
+                        padding-right: 10px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}

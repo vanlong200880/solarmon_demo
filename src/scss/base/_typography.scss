@@ -1,0 +1,99 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, sans-serif;
+    color: #444;
+    padding: 0;
+    margin: 0;
+    line-height: 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 13px;
+}
+
+a {
+    @include transition(all 0.3s ease);
+
+    &:hover {
+        color: $hover;
+    }
+}
+
+::-webkit-input-placeholder {
+    /* Edge */
+    color: #ccc !important;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer */
+    color: #ccc !important;
+}
+
+::placeholder {
+    color: #ccc !important;
+}
+
+.content-wrapper {
+    margin-top: 40px;
+}
+
+body {
+    .btn-action {
+        background-color: $default !important;
+        font-size: 14px;
+        border: none;
+        outline: none;
+        @include box-shadow(none);
+        @include transition(all 0.3s ease);
+
+        &:focus,
+        &:active,
+        &:visited,
+        &:hover {
+            background-color: $hover !important;
+            @include box-shadow(none);
+        }
+    }
+
+    .form-control:disabled,
+    .form-control[readonly] {
+        background-color: #f3f5f7;
+    }
+}
+.required{
+    color: #c50000;
+    padding-left: 3px;
+}
+.swiper-container{
+    &.swiper-container-horizontal{
+        .swiper-pagination{
+            bottom: 0;
+            text-align: right;
+        }
+    }
+    
+}

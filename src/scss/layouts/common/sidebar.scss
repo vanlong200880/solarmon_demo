@@ -1,0 +1,203 @@
+@import "../../helpers/mixins";
+.sidebar-project{
+    width: 260px;
+    height: calc(100% - 60px);
+    position: absolute;
+    top: 60px;
+    background-color: #f0f3f5;
+    padding: 10px;
+    h2{
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #fff;
+        margin-top: 15px;
+    }
+    .sidebar-content{
+        position: relative;
+        overflow-y: auto;
+        height: calc(100% - 30px);
+    }
+    .group{
+        position: relative;
+        height: 42px;
+        cursor: pointer;
+        font-weight: 600;
+        .scal-ex{
+            position: absolute;
+            right: 0;
+            width: 42px;
+            height: 42px;
+            display: inline-block;
+            text-align: right;
+            var{
+                position: relative;
+                font-size: 22px;
+                top: 3px;
+                display: inline-block;
+                &.rotate{
+                    @include transform-rotate(90deg);
+                }
+            }
+        }
+    }
+
+    span{
+        font-size: 22px;
+        display: inline-block;
+        width: 24px;
+        height: 40px;
+        text-align: left;
+        position: relative;
+        top: 5px;
+    }
+    ul{
+        margin-top: 10px;
+        li{
+            line-height: 40px;
+            position: relative;
+            ul{
+                // 
+                margin-top: 0;
+                position: relative;
+                &::before{
+                    content: "";
+                    height: calc(100% - 20px);
+                    width: 1px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    border-left: 1px dashed #222;
+                }
+                li{
+                    padding-left: 15px;
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        @include border-radius(3px);
+                        position: relative;
+                        min-height: 40px;
+                        padding:  0 5px 0 40px;
+                        line-height: 40px;
+                        
+                        label{
+                            display: inline-block;
+                            width: 100%;
+                            line-height: 24px;
+                            cursor: pointer;
+                        }
+                        span{
+                            position: absolute;
+                            top: 5px;
+                            left: 5px;
+                        }
+                        &::before{
+                            position: absolute;
+                            content: "";
+                            height: 1px;
+                            width: 15px;
+                            border-bottom: 1px dashed #222;
+                            top: 20px;
+                            left: -15px;
+                        }
+                        &.active{
+                            color: $default;
+                            background-color: #dee0e2;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+
+
+.sidebar{
+    width: 260px;
+    height: calc(100% - 60px);
+    position: absolute;
+    top: 60px;
+    background-color: #f0f3f5;
+    padding: 10px;
+    h2{
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #fff;
+        margin-top: 15px;
+    }
+    var{
+        font-size: 22px;
+        display: inline-block;
+        width: 34px;
+        height: 40px;
+        text-align: left;
+        position: relative;
+        top: 5px;
+        text-align: center;
+    }
+    ul{
+        margin-top: 10px;
+        li{
+            line-height: 40px;
+            a{
+                display: inline-block;
+                width: 100%;
+                @include border-radius(3px);
+                position: relative;
+                &.active{
+                    color: $default;
+                    background-color: #dee0e2;
+                }
+            }
+        }
+    }
+}
+
+body{
+    &.menu_collapse{
+        .sidebar{
+            width: 60px;
+            padding: 0;
+            h2{
+                display: none;
+            }
+            ul{
+                li{
+                    a{
+                        width: 60px;
+                        text-align: center;
+                        @include transition(all 0s ease);
+                        @include border-radius(0);
+                        span{
+                            position: absolute;
+                            display: none;
+                            top: 0;
+                            left: 40px;
+                            z-index: 9;
+                            width: 180px;
+                            background-color: #dee0e2;
+                            height: 42px;
+                            line-height: 42px;
+                        }
+                        &:hover{
+                            background-color: #dee0e2;
+                            span{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #main{
+            width: calc(100% - 60px);
+        }
+    }
+}

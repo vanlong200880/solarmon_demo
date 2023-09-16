@@ -1,0 +1,95 @@
+.permissions{
+    height: 100%;
+    position: relative;
+    .form-roles{
+        margin-top: 15px
+    }
+    .data-permissions{
+        height: calc(100% - 55px);
+        position: relative;
+        border: 1px solid #ddd;
+        .box-header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 40px;
+            width: 100%;
+            
+            .data-header{
+                .header-row{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    border-bottom: 1px solid #e2e3e4;
+                    background: #f0f3f5;
+                    .header-col{
+                        flex-grow: 1;
+                        padding: 0 5px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        height: 40px;
+                        line-height: 40px;
+                        font-weight: 700;
+                        border-right: 1px solid #e2e3e4;
+                        position: relative;
+                        text-align: center;
+                        &.screen-name{
+                            width: calc(100% - 800px);
+                            text-align: left;
+                        }
+
+                        &:last-of-type{
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+        .box-body{
+            height: calc(100% - 40px);
+            position: absolute;
+            top: 40px;
+            width: 100%;
+            left: 0;
+            overflow-x: auto;
+            
+            .data-body{
+                .body-row{
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    border-bottom: 1px solid #e2e3e4;
+
+                    .body-col{
+                        flex-grow: 1;
+                        padding: 0 5px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: center;
+                        border-right: 1px solid #e2e3e4;
+                        p{
+                            height: 40px;
+                            line-height: 40px;
+                            &.level{
+                                padding-left: 30px;
+                            }
+                        }
+                        &.screen-name{
+                            width: calc(100% - 800px);
+                            text-align: left;
+                        }
+
+                        &:last-of-type{
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.widthfix80{
+    width: 80px;
+}

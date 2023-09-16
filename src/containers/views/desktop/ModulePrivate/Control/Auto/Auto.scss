@@ -1,0 +1,123 @@
+@import "../../../../../../scss/helpers/variables";
+@import "../../../../../../scss/helpers/mixins";
+.main-auto{
+    margin-top: 30px;
+    .add-date{
+        fieldset{
+            border: 1px solid #DDD;
+            padding: 20px;
+            position: relative;
+            margin-top: 15px;
+            legend{
+                font-size: 14px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                span{
+                    position: absolute;
+                    background: #FFF;
+                    top: -10px;
+                    left: 10px;
+                    padding: 0 5px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .validate-message{
+            display: none;
+        }
+    }
+}
+.choose-device{
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 30px;
+    h2{
+        font-size: 14px;
+        border-bottom: 1px solid #DDD;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+}
+.main-calendar{
+    margin-top: 30px;
+    .rbc-toolbar{
+        margin-bottom: 30px;
+    }
+    .rbc-event{
+        background-color: #f58634;
+        border-color: #f58634;
+    }
+    .rbc-event-label{
+        display: none;
+    }
+}
+
+.manual-list-device{
+    ul{
+        li{
+            width: 25%;
+        }
+    }
+    .inverter-item{
+        background-color: #f3f5f7;
+        @include border-radius(6px);
+        padding: 15px;
+        margin-top: 15px;
+        @include box-shadow(0px 0px 3px #918888);
+        img{
+            max-width: 65%;
+            margin-top: 7px;
+            &.off{
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+                -moz-filter: grayscale(100%);
+                -ms-filter: grayscale(100%);
+                -o-filter: grayscale(100%);
+            }
+        }
+        .title{
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #DDD;
+            padding-bottom: 5px;
+        }
+        .mccb{
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .action-on-off{
+            background-color: $default;
+            @include border-radius(6px);
+            padding: 3px 5px;
+            display: inline-block;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFF;
+            cursor: pointer;
+            margin-top: 5px;
+            font-size: 12px;
+            &.off{
+                background-color: rgb(216, 0, 0);
+            }
+        }
+        .iv-content{
+            margin-top: 10px;
+            span{
+                line-height: 30px;
+                background-color: #FFF;
+                display: inline-block;
+                width: 100%;
+                border: 1px solid #DDD;
+                text-align: center;
+                margin: 5px 0;
+                height: 30px;
+            }
+        }
+    }
+}

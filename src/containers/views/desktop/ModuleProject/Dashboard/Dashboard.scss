@@ -1,0 +1,66 @@
+@import "../../../../../scss/helpers/variables";
+@import "../../../../../scss/helpers//mixins";
+
+.dashboard{
+    hr{
+        margin: 3px 0;
+    }
+    .irradiance-item{
+        padding: 2px 5px;
+    }
+    .project-status{
+        position: relative;
+        padding: 5px;
+        a{
+            display: inline-block;
+            position: relative;
+            img{
+                height: 16px;
+            }
+            .count-alert{
+                position: relative;
+                bottom: 0;
+                display: inline-block;
+                font-size: 10px;
+                padding: 0 2px;
+                margin-right: 5px;
+            }
+        }
+    }
+    .data-view{
+        overflow-x: auto;
+        .main-dashboard-view{
+            min-width: 1720px;
+        }
+    }
+    .plant-sum{
+        margin: 15px 0;
+        .item{
+            @include box-shadow(0 0 4px 0 rgba(0, 0, 0, .2));
+            padding: 15px;
+            @include border-radius(4px);
+            position: relative;
+            margin-bottom: 15px;
+            h2{
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-bottom: 1px solid #DDD;
+                margin-bottom: 5px;
+            }
+            .sub-item{
+                p{
+                    line-height: 24px;
+                }
+                .today{
+                    color: $default;
+                    font-weight: bold;
+                }
+                .total-money{
+                    font-weight: bold;
+                    color: #f2ae1b;
+                }
+            }
+        }
+    }
+}

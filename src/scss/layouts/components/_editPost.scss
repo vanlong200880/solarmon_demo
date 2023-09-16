@@ -1,0 +1,49 @@
+.edit-post{
+	padding: 0;
+	.main-info{
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
+	.tab{
+		margin-bottom: 15px;
+		ul{
+			li{
+				span{
+					display: inline-block;
+					padding: 7px 0;
+					text-align: center;
+					background: #f3f5f7;
+					@include border-radius(20px);
+					cursor: pointer;
+					width: 100%;
+					
+				}
+				&.active{
+					span{
+						background: $default;
+						color: #FFF;
+					}
+				}
+
+			}
+		}
+	}
+}
+.project{
+	.main-edit{
+		.modal-backdrop{
+			display: none !important;
+		}
+	}
+	.edit-post{
+		display: none !important;
+	}	
+}
+
+body{
+	&.add-house{
+		.main-edit{
+			display: none;
+		}
+	}
+}

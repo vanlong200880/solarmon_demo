@@ -1,0 +1,367 @@
+@import "../../../../../scss/helpers/variables";
+@import "../../../../../scss/helpers/mixins";
+.plant{
+    height: 100%;
+    position: relative;
+    .show-12month,
+    .show-3day{
+        .cmsdatepicker{
+            float: left;
+            width: auto;
+        }
+        .line-date{
+            span{
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+    .full-screen{
+        max-width: calc(100% - 3.5rem);
+        .modal-content{
+            height: 100%;
+            .modal-body{
+                background-color: #FFF;
+                padding: 0;
+            }
+        }
+    }
+    .list-device-status{
+        @include box-shadow(0 0 4px 0 rgba(0, 0, 0, .2));
+        margin-top: 20px;
+        padding: 15px;
+        h2{
+            font-size: 16px;
+            position: relative;
+            margin-bottom: 15px;
+            span{
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                border: 1px solid #DDD;
+                font-size: 14px;
+                padding: 3px 10px;
+                background: #f3f5f7;
+                @include border-radius(3px);
+                cursor: pointer;
+                top: 0;
+                var{
+                    position: relative;
+                }
+            }
+        }
+        .main-device-status{
+            margin-top: 30px;
+            &.is-meter{
+                .item{
+                    margin-top: 70px;
+                    &.power-gird{
+                        margin-top: 0;
+                    }
+                    &.solar-meter{
+                        .line-energy{
+                            @include transform-rotate(-20deg);
+                        }
+                        .line-home{
+                            @include transform-rotate(20deg);
+                        }
+                        
+                    }
+                }
+            }
+            .item{
+                position: relative;
+                height: 95px;
+                .sum-inverter{
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                }
+                img{
+                    width: 70px;
+                }
+                .text{
+                    padding-top: 10px;
+                }
+                .line-home,
+                .line-energy{
+                    position: absolute;
+                    width: calc(100% - 80px);
+                    height: 1px;
+                    border-bottom: 2px $default dashed;
+                    top: 35px;
+                    left: 80px;
+                    transform-Origin: left bottom;
+                    text-align: center;
+                    &.close{
+                        border-bottom-color: rgb(134, 0, 0);
+                        .close-line{
+                            width: 24px;
+                            height: 24px;
+                            line-height: 24px;
+                            display: inline-block;
+                            position: absolute;
+                            top: -9px;
+                            right: -10px;
+                            color: rgb(134, 0, 0);
+                        }
+                    }
+                    span{
+                        position: relative;
+                        top: -25px;
+                        color: $default;
+                    }
+                }
+            }
+        }
+        
+    }
+    .site-info{
+        @include box-shadow(0 0 4px 0 rgba(0, 0, 0, .2));
+        .info{
+            border-bottom: 1px solid #DDD;
+            padding: 10px;
+            .info-img{
+                height: 160px;
+                overflow: hidden;
+                position: relative;
+                img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            p{
+                margin-top: 5px;
+            }
+        }
+        .list-item{
+            padding: 15px 0;
+            ul{
+                li{   
+                    margin-bottom: 15px;                     
+                    .item{
+                        position: relative;
+                        padding: 0 0 15px 70px;
+                        .view-icon{
+                            position: absolute;
+                            left: 10px;
+                            top: 5px;
+                            width: 50px;
+                            height: 50px;
+                            background-color: #f3f5f7;
+                            @include border-radius(10px);
+                        }
+                        p{
+                            &.text{
+                                font-size: 16px;
+                            }
+                            &.value{
+                                font-weight: bold;
+                            }
+                        }
+                        &.temperature{
+                            .view-icon{
+                                background-color: #52b685;
+                            }
+                        }
+                        &.irradiance{
+                            .view-icon{
+                                background-color: #eaa13b;
+                            }
+                        }
+                        &.temp{
+                            .view-icon{
+                                background-color: #626ae9;
+                            }
+                        }
+                        &.humidity{
+                            .view-icon{
+                                background-color: #4b83ee;
+                            }
+                        }
+                        &.wind{
+                            .view-icon{
+                                background-color: #dc5697;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .plant-chart{
+        position: relative;
+        .box-header{
+            .item{
+                @include box-shadow(0 0 4px 0 rgba(0, 0, 0, .2));
+                padding: 15px;
+                @include border-radius(4px);
+                position: relative;
+                h2{
+                    font-size: 15px;
+                }
+                p{
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin: 15px 0;
+                }
+                h3{
+                    font-size: 14px;
+                }
+                .item-icon{
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    @include border-radius(10px);
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    padding: 5px;
+                }
+
+                &.energy{
+                    p{
+                        color: $default;
+                    }
+                    .item-icon{
+                        background-color: rgba(102, 188, 81, .2);
+                    }
+                    
+                }
+                &.power{
+                    p{
+                        color: #0764a7;
+                    }
+                    .item-icon{
+                        background-color: rgba(7, 100, 167, .2);
+                    }
+                }
+                &.revenue{
+                    p{
+                        color: #f2ae1b;
+                    }
+                    .item-icon{
+                        background-color: rgba(242, 174, 27, .2);
+                    }
+                }
+                
+            }
+        }
+
+        .box-chart{
+            width: 100%;
+            margin: 20px 0;
+            @include box-shadow(0 0 4px 0 rgba(0, 0, 0, .2));
+            padding: 15px;
+            .chart-content{
+                padding-top: 15px;
+                overflow: hidden;
+            }
+            .chart-filter{
+                .time-filter{
+                    height: 34px;
+                    float: right;
+                    padding-right: 10px;
+                    max-width: 35%;
+                    .pad-line{
+                        padding: 0 15px;
+                    }
+                    span{
+                        &.icon{
+                            padding: 5px;
+                            position: relative;
+                            top: 2px;
+                            cursor: pointer;
+                            &.disabled{
+                                cursor: not-allowed;
+                                color: #DDD;
+                            }
+                        }
+                    }
+                    label{
+                        display: inline-block;
+                        padding: 0 5px;
+                        font-size: 0.9rem;
+                    }
+                }
+
+
+                .filter-raw{
+                    display: inline-block;
+                    .main-raw{
+                        display: inline-block;
+                        border: 1px solid #DDD;
+                        margin-right: 10px;
+                        @include border-radius(3px);
+                        span{
+                            display: inline-block;
+                            padding: 5px 15px;
+                            border-right: 1px solid #DDD;
+                            cursor: pointer;
+                            border-bottom: 2px solid transparent;
+                            &:last-of-type{
+                                border-right: none;
+                            }
+                            &.active{
+                                border-bottom-color:$default;
+                                color: $default;
+                            }
+                            &.disabled{
+                                cursor:not-allowed;
+                                color: #c5c5c5;
+                            }
+                        }
+                    }
+                    
+                }
+                .filter{
+                    text-align: right;
+                    position: relative;
+                    float: right;
+                    max-width: 65%;
+                    .view{
+                        display: inline-block;
+                        border: 1px solid rgba(0,0,0,.15);
+                        padding: 5px 15px;
+                        @include border-radius(3px);
+                        text-align: left;
+                        span{
+                            position: relative;
+                            top: 2px;
+                            padding-left: 5px;
+                            float: right;
+                        }
+                    }
+                    .filter-dropdown{
+                        position: absolute;
+                        right: 0;
+                        border: 1px solid rgba(0,0,0,.15);
+                        @include border-radius(3px);
+                        width: 140px;
+                        display: none;
+                        z-index: 9;
+                        background-color: #FFF;
+                        a{
+                            display: inline-block;
+                            width: 100%;
+                            padding: 5px 15px;
+                            text-align: left;f
+                            &:hover{
+                                background-color: #E1F0FA;
+                            }
+                            &.active{
+                                background-color: #E1F0FA;
+                            }
+                        }
+                    }
+                    &.on{
+                        .filter-dropdown{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

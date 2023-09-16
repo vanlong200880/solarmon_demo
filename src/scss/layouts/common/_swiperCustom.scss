@@ -1,0 +1,47 @@
+.swiper-group {
+    .swiper-container {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-image: none;
+            background: #ffffff;
+            @include border-radius(50%);
+            font-size: 26px;
+            @include box-shadow(3px 3px 5px #333333);
+
+            span {
+                position: relative;
+                top: 3px;
+            }
+
+            &:hover {
+                background: $default;
+                color: #ffffff;
+            }
+        }
+
+        .swiper-button-next {
+            right: -100px;
+            @include transition(right 0.3s ease);
+        }
+
+        .swiper-button-prev {
+            left: -100px;
+            @include transition(left 0.3s ease);
+        }
+
+        &:hover {
+            .swiper-button-next {
+                right: 10px;
+            }
+
+            .swiper-button-prev {
+                left: 10px;
+            }
+        }
+    }
+}

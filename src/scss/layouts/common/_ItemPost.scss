@@ -1,0 +1,173 @@
+.item-post {
+    position: relative;
+    background: #FFF;
+    @include border-radius(3px);
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid #f3f5f7;
+
+    .img {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+			top: 0;
+			left: 0;
+        }
+
+        .favorite {
+            position: absolute;
+            z-index: 9;
+            top: 5px;
+            right: 5px;
+            font-size: 22px;
+            color: #FFF;
+            cursor: pointer;
+        }
+
+        .own {
+            margin-top: 5px;
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+
+            span {
+                background: $green;
+                color: #fff;
+                padding: 3px 5px;
+                @include border-radius(15px);
+                font-size: 12px;
+
+                &.partner {
+                    background: $default;
+                }
+            }
+        }
+
+    }
+
+    .info {
+        padding: 5px 7px;
+
+        h3 {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 0;
+            // min-height: 40px;
+        }
+
+        p {
+            &.address {
+                color: #848484;
+                // min-height: 40px;
+            }
+
+            &.price {
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            &.direction {
+                padding-top: 5px;
+
+                var {
+                    position: relative;
+                    top: 2px;
+                    color: #8b8b8b;
+                }
+
+                ul {
+                    li {
+                        display: inline-block;
+                        padding: 0 7px;
+                        position: relative;
+                        margin-bottom: 0;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 13px;
+                            width: 1px;
+                            background: #ddd;
+                            right: 0;
+                            top: 5px;
+                        }
+
+                        &:first-child {
+                            padding-left: 0;
+                        }
+
+                        &:last-child {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .acreage-price {
+            margin-top: 5px;
+            border-top: 1px solid #f3f5f7;
+            padding-top: 5px;
+
+            p {
+                line-height: 24px;
+            }
+        }
+    }
+
+    &.diamond {
+        h3 {
+            a {
+                color: $diamond;
+            }
+        }
+
+        p {
+            &.price {
+                span {
+                    color: $diamond;
+                }
+            }
+        }
+    }
+
+    &.silver {
+        h3 {
+            a {
+                color: $silver;
+            }
+        }
+
+        p {
+            &.price {
+                span {
+                    color: $silver;
+                }
+            }
+        }
+    }
+
+    &.gold {
+        h3 {
+            a {
+                color: $gold;
+            }
+        }
+
+        p {
+            &.price {
+                span {
+                    color: $gold;
+                }
+            }
+        }
+    }
+}

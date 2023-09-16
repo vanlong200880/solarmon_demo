@@ -1,0 +1,510 @@
+.page-statics {
+    padding: 30px 0;
+
+    .title {
+        h1 {
+            text-align: center;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-bottom: 30px;
+        }
+    }
+
+    &.about {
+        .title {
+            h1 {
+                text-align: center;
+                font-size: 20px;
+                text-transform: uppercase;
+                color: $default;
+            }
+
+        }
+    }
+
+    &.team-of-use {
+        .content {
+            p {
+                line-height: 24px;
+                margin-bottom: 10px;
+                text-align: justify;
+
+                span {
+                    font-style: italic;
+                }
+            }
+
+            ul {
+                li {
+                    list-style-type: disc;
+                    margin-left: 30px;
+                    line-height: 24px;
+                    margin-bottom: 10px;
+                    text-align: justify;
+
+                    span {
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        .item-summary {
+            position: relative;
+
+            .info-about {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                width: 50%;
+                height: calc(100% - 60px);
+                background: rgba(0, 0, 0, .5);
+                padding: 15px;
+                @include border-radius(4px);
+
+                p {
+                    color: #FFF;
+                    line-height: 24px;
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                    text-align: justify;
+                }
+            }
+        }
+
+        .philosophy {
+            margin: 30px 0;
+
+            h2 {
+                text-align: center;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $default;
+                padding: 30px 0;
+            }
+
+            .item {
+                margin-bottom: 30px;
+                position: relative;
+
+                .info {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 15px;
+                    right: 15px;
+                    padding: 10px;
+                    color: #FFF;
+                    background: rgba(0, 0, 0, .5);
+                    @include border-radius(4px);
+
+                    .title {
+                        font-size: 16px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                    }
+
+                    .fullContent {
+                        p {
+                            line-height: 24px;
+                        }
+                    }
+                }
+
+            }
+
+            .service {
+                .service-item {
+                    @include border-radius(4px);
+                    overflow: hidden;
+                    cursor: pointer;
+                    margin-bottom: 15px;
+
+                    .img {
+                        overflow: hidden;
+                    }
+
+                    h3 {
+                        background: $default;
+                        color: #FFF;
+                        font-size: 14px;
+                        text-align: center;
+                        padding: 7px 5px;
+                    }
+                    &:hover{
+                        h3{
+                            background: $orange;
+                        }
+                    }
+                }
+            }
+        }
+
+        .info {
+            ul {
+                li {
+                    .item {
+                        text-align: center;
+
+                        p {
+                            .icon {
+                                width: 60px;
+                                height: 60px;
+                                border: 1px solid #f2f3f7;
+                                display: inline-block;
+                                line-height: 60px;
+                                text-align: center;
+                                @include border-radius(50%);
+                                font-size: 24px;
+                                color: #9a9898;
+
+                                &::before {
+                                    position: relative;
+                                    top: 2px;
+                                }
+
+                            }
+
+                            &.title {
+                                font-size: 16px;
+                                text-transform: uppercase;
+                                padding-top: 15px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .address {
+            margin-top: 60px;
+
+            h2 {
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            p {
+                line-height: 30px;
+            }
+
+            a {
+                &.sent {
+                    @include border-radius(4px);
+                    background: $default;
+                    display: inline-block;
+                    padding: 7px 20px;
+                    color: #ffffff;
+
+                    &:hover {
+                        background: $hover;
+                    }
+                }
+            }
+        }
+    }
+
+    &.create-post {
+        .list-bank {
+            margin-top: 15px;
+        }
+
+        .step {
+            margin: 15px 0;
+
+            h2 {
+                background: #dfedf9;
+                line-height: 40px;
+                font-size: 16px;
+                font-weight: bold;
+
+                span {
+                    height: 40px;
+                    display: inline-block;
+                    background: $default;
+                    color: #FFF;
+                    padding: 0 10px;
+                    line-height: 40px;
+                    margin-right: 10px;
+                }
+            }
+
+            .content {
+                padding: 15px 0;
+
+                img {
+                    border: 1px solid #DDD;
+                    @include border-radius(4px);
+                    margin: 10px 0;
+                }
+
+                p {
+                    line-height: 24px;
+
+                    var {
+                        color: red;
+                    }
+                }
+
+                ul {
+                    margin: 10px 0 10px 15px;
+
+                    li {
+                        line-height: 24px;
+                        margin-bottom: 5px;
+
+                        var {
+                            color: $default;
+                            position: relative;
+                            top: 2px;
+                        }
+                    }
+                }
+
+                .steppost {
+                    padding-left: 20px;
+
+                    h3 {
+                        background: #f3f5f7;
+                        line-height: 40px;
+                        font-size: 16px;
+                        font-weight: bold;
+
+                        span {
+                            height: 40px;
+                            display: inline-block;
+                            background: $orange;
+                            color: #FFF;
+                            padding: 0 10px;
+                            line-height: 40px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    h4 {
+                        margin: 10px 0;
+
+                        span {
+                            background: $default;
+                            color: #FFF;
+                            padding: 5px 15px;
+                            font-size: 14px;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .group {
+                        padding: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.library {
+        .info {
+            .col-xl-6 {
+                margin-bottom: 30px;
+            }
+        }
+
+        .item {
+            @include border-radius(4px);
+            padding: 15px;
+            border: 1px solid #DDD;
+            height: 100%;
+
+            h2 {
+                font-size: 16px;
+                font-weight: bold;
+                border-bottom: 1px solid #DDD;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+            }
+
+            &.group {
+                .content {
+                    p {
+                        text-align: center;
+                        line-height: 24px;
+
+                        img {
+                            padding: 30px 0;
+                        }
+
+                        .detail {
+                            display: inline-block;
+                            padding: 5px 15px;
+                            color: #FFF;
+                            background: $default;
+                            @include border-radius(4px);
+                            margin: 15px 0;
+
+                        }
+                    }
+                }
+            }
+
+            .content {
+                .icon-download {
+                    position: relative;
+                    margin-left: 5px;
+                }
+
+                ul {
+                    margin-left: 30px;
+
+                    li {
+                        list-style: square;
+                        line-height: 24px;
+                        margin-bottom: 10px;
+                        ul{
+                            li{
+                                list-style-type: disc;
+                            }
+                        }
+                    }
+                }
+
+
+                .question {
+                    background: #f3f5f7;
+                }
+
+                .question h2 {
+                    font-size: 22px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    padding: 30px 0;
+                }
+
+
+
+
+            }
+
+            &.wh {
+                @include border-radius(0);
+                border: none;
+                padding: 0;
+                h2.title{
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    padding: 30px 0;
+                    border-bottom: none;
+                    font-size: 18px;
+                }
+                .accordion {
+                    h2 {
+                        font-size: 16px;
+                        padding: 0;
+                        text-align: left;
+                        font-weight: normal;
+                    }
+
+                    .card {
+                        margin-bottom: 15px;
+                        border: 1px solid #DDD !important;
+                        border-radius: 0px;
+                        -webkit-border-radius: 0px;
+                        -moz-border-radius: 0px;
+                        -o-border-radius: 0px;
+                        -ms-border-radius: 0px;
+
+                        .card-header {
+                            padding: 0;
+                            background: #FFF;
+
+                            a {
+                                display: inline-block;
+                                width: 100%;
+                                text-align: left;
+                                padding: 10px 30px;
+                                cursor: pointer;
+                                text-transform: none;
+                                position: relative;
+
+                                &.title {
+                                    &::before {
+                                        content: "";
+                                        width: 15px;
+                                        height: 1px;
+                                        background: #222222;
+                                        position: absolute;
+                                        left: 9px;
+                                        top: 18px;
+                                    }
+
+                                    &::after {
+                                        content: "";
+                                        width: 15px;
+                                        height: 1px;
+                                        background: #222222;
+                                        position: absolute;
+                                        left: 9px;
+                                        top: 18px;
+                                        transition: all ease 0.4s;
+                                        transform: rotate(0deg);
+                                    }
+
+                                    &.collapsed {
+                                        &::after {
+                                            transform: rotate(90deg);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .card-body {
+                        padding: 15px;
+
+                        ul {
+                            margin-left: 30px;
+
+                            li {
+                                list-style-type: square;
+                                margin-bottom: 10px;
+                                line-height: 24px;
+                                text-align: justify;
+                            }
+                        }
+
+                        p {
+                            text-align: justify;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.mobile,
+    &.tablet{
+        .content{
+            .item-summary{
+                .info-about{
+                    position: relative;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    @include border-radius(0);
+                    background: #f3f5f7;
+                    p{
+                        color: #222222;
+                    }
+                }
+            }
+        }
+    }
+}

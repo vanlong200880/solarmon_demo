@@ -1,0 +1,77 @@
+{
+  "name": "solarmon",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "@react-google-maps/api": "^2.2.0",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "@tinymce/tinymce-react": "^3.12.6",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.0",
+    "caniuse-lite": "^1.0.30001271",
+    "cross-env": "^7.0.3",
+    "crypto-js": "^4.0.0",
+    "es-module-shims": "^0.1.15",
+    "file-saver": "^2.0.5",
+    "format-number": "^3.0.0",
+    "highcharts": "^9.1.2",
+    "highcharts-react-official": "^3.0.0",
+    "howdo": "^3.3.0",
+    "i18next": "^20.2.2",
+    "jquery": "^3.6.0",
+    "js-file-download": "^0.4.12",
+    "moment": "^2.29.1",
+    "node-sass": "^5.0.0",
+    "pdfjs-dist": "^2.10.377",
+    "react": "^17.0.2",
+    "react-big-calendar": "^0.38.9",
+    "react-bootstrap4-modal": "^1.7.5",
+    "react-datepicker": "^3.8.0",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.8.15",
+    "react-organizational-chart": "^2.2.0",
+    "react-particles-js": "^3.4.1",
+    "react-pdf": "^5.4.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
+    "react-tabs": "^3.2.2",
+    "react-to-pdf": "0.0.14",
+    "react-to-print": "^2.13.0",
+    "react-toastify": "^7.0.4",
+    "react-tooltip": "^4.2.19",
+    "round-to": "^5.0.0",
+    "styled-components": "^5.3.6",
+    "tinymce": "^5.8.2",
+    "web-vitals": "^1.1.2",
+    "xlsx": "^0.17.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {}
+}
